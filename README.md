@@ -19,7 +19,7 @@ This project explores the UCI Heart Disease dataset using Python, Pandas, and Se
 
 ## 📁 Project Structure
 
-Heart-Disease-EDA/ ├── heart.csv ├── analysis.ipynb └── README.md
+Heart-Disease-EDA/ ├── heart.csv ├── Heart Disease Risk analysis.py └── README.md
 
 ## 👩‍💻 Created by:
 *Yashvi Verma*
