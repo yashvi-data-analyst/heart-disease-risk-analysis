@@ -1,0 +1,44 @@
+# HEART DISEASE RISK ANALYSIS
+
+# Step 1: Import Libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# For better plots
+sns.set(style="whitegrid")
+
+# Step 2: Load the CSV
+df = pd.read_csv('heart.csv')
+df.head()
+
+# Step 3: Explore the data
+df.info()
+df.describe()
+df.isnull().sum()
+df['target'].value_counts()
+
+# Target Distribution
+sns.countplot(x='target', data=df)
+plt.title("Heart Disease Distribution (0 = No, 1 = Yes)")
+plt.show()
+
+# Age Distribution
+plt.figure(figsize=(8, 4))
+sns.histplot(df['age'], bins=20, kde=True)
+plt.title("Age Distribution")
+plt.show()
+
+# Cholesterol vs Target
+plt.figure(figsize=(8, 4))
+sns.boxplot(x='target', y='chol', data=df)
+plt.title("Cholesterol Levels by Heart Disease")
+plt.show()
+
+# Correlation Heatmap
+plt.figure(figsize=(12, 8))
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm', linewidths=0.5)
+plt.title("Correlation Heatmap")
+plt.show()
+
